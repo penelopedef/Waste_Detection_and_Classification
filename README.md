@@ -13,3 +13,34 @@ to 2.5 million tons by 2030 if current trends persist (Circle Economy, 2022).
 
 The motivation behind WasteWise Toronto is to leverage advanced machine learning and data science techniques to improve sorting accuracy,
 thus enhancing recycling efforts and reducing the overall environmental footprint of urban waste management. 
+
+## About the Dataset
+- A mixed Waste dataset was used for this project. It comprised 6,884 images images 416x416 colour images in 11 classes. The training images were 4800, testing images were ¬1000 and validation images were ¬1000 in quantity. The classes in the dataset included: 'cans', 'tins', 'metal_trays_plates_pans','cardboard', 'styrofoam container', 'envelope', 'paper', 'carton', 'plastic', 'organics', 'general'
+- ¬2100 were recyclables, ¬2100 organics, ¬2100 general
+
+The following pre-processing steps was applied to each image:
+- Auto-orientation of pixel data (with EXIF[Exchangeable Image File Format]-orientation stripping)
+- Resize to 416x416 (Stretch)
+N.B - EXIF-orientation stripping involves analyzing the orientation information stored in the EXIF metadata and rotating or flipping the image data accordingly to ensure that it is displayed correctly.
+
+The following augmentation was applied to create 3 versions of each source image:
+- 50% probability of horizontal flip
+- 50% probability of vertical flip
+- Equal probability of one of the following 90-degree rotations: none, clockwise, counter-clockwise, upside-down
+- Random shear of between -15° to +15° horizontally and -15° to +15° vertically
+- Reference Provided by a Roboflow user License: CC BY 4.0
+
+Blue Bin:Recyclables
+- Metals ('cans', 'tins', 'metal_trays_plates_pans'): https://www.kaggle.com/datasets/sumn2u/garbage-classification-v2?select=metal
+- Cardboard boxes: https://universe.roboflow.com/dataset-t7hz7/cardboard-eupc8/dataset/3
+- Styrofoam containers : https://universe.roboflow.com/namseoul-qobk6/styrofoam-qt1kt/dataset/1 Envelopes: https://universe.roboflow.com/mateo-ojeda/envelope-c6750/dataset/1 - Paper: https://universe.roboflow.com/natalie-perrochon-yqnhb/recycling-try-2/dataset/16
+- Carton juice and milk boxes: https://app.roboflow.com/waste-z6zen/carton-xuife/1
+- Plastic bottles: https://universe.roboflow.com/betul-rt4lp/plastic-bottle-cuwtu/dataset/1
+
+Green Bin: Organics (fruits, vegetables, scraps from plates and garbage dumps, rotting foods) https://universe.roboflow.com/patata-man-y8maj/bio-waste/browse?queryText=&pageSize=50&startingIndex=0&browseQuery=true https://universe.roboflow.com/search?q=organic%20waste
+
+Black Bin: General waste
+- mugs: https://universe.roboflow.com/gsa-team/mugs-vhjth
+- broken plates: https://app.roboflow.com/waste-z6zen/general-1/1
+- cigarettes: https://universe.roboflow.com/universitadellacalabria-icrla/cigarettebuttdetection-tlhei
+- Masks and gloves: https://universe.roboflow.com/sultana-almasoud/our_gp2
