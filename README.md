@@ -44,3 +44,15 @@ Black Bin: General waste
 - broken plates: https://app.roboflow.com/waste-z6zen/general-1/1
 - cigarettes: https://universe.roboflow.com/universitadellacalabria-icrla/cigarettebuttdetection-tlhei
 - Masks and gloves: https://universe.roboflow.com/sultana-almasoud/our_gp2
+
+## About the Model
+For the Object Detection Model, YOLOv8n was selected over YOLOv5 due to its potential for balancing speed and accuracy, supported by ample help, documentation, and community resources. 
+
+## Findings
+The Yolov8n model was trained via supervised learning, with predictions based on class labels and bounding boxes indicating waste coordinates within the image dataset. Through experimentation with hyper-tuning parameters, the most optimal values (50 epochs, 64 batch size, 0.0001 learning rate, 0.15 dropout) were identified, resulting in a notable decrease in loss scores and an increase in precision values, indicative of improved detection accuracy. Despite training the model on a relatively small dataset of 4800 images and 50 epochs, the waste detection model achieved an overall precision of 72.6%, with 7 out of the 11 classes demonstrating very good precision scores ranging from 73% to 98%.
+
+
+
+## References
+- Circle Economy, 2022. Lessons from North America: How Toronto is going Circular. https://www.circle-economy.com/blogs/lessons-from-north-america-how-toronto-is-going-circular
+- World Health Organization, 2024. What a Waste 2.0. https://datatopics.worldbank.org/what-a-waste/#:~:text=As%20nations%20and%20cities%20urbanize,through%20open%20dumping%20or%20burning.
